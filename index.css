@@ -1,8 +1,16 @@
 body {
-    background-color: "#f4ede0";
+    background-color: #f4ede0;
     margin: 20px;
 }
 
 .btn{
     margin-left:10px;
+    }
+
+.card{
+    margin-bottom: 10px;
+}
+
+.navbar{
+    margin-bottom: 10px;
 }

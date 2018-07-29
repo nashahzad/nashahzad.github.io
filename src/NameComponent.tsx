@@ -17,7 +17,7 @@ export default class NameComponent extends React.Component<Name, {}>{
     render(){
         return ( 
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand">
                 <img src="https://dxj7eshgz03ln.cloudfront.net/production/link/image/147296/original_ratio_extra_large_5abba77a-f2c2-42e8-96ae-84dd7d589977.gif" width="30" height="30" alt="" />
             </a>
             <a className="navbar-brand">{this.props.name}</a>

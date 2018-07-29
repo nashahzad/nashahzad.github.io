@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import Name from "./src/NameComponent";
-import InfoRadioComponent from "./src/InfoRadioComponent";
 import PanelComponent from "./src/PanelComponent";
 
 class App extends React.Component<{},{projects: boolean, name: string}>{
