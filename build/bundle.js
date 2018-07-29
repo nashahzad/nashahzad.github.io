@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nconst ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\nconst NameComponent_1 = __webpack_require__(/*! ./src/NameComponent */ \"./src/NameComponent.tsx\");\nReactDOM.render(React.createElement(\"div\", null,\n    React.createElement(NameComponent_1.default, { name: \"Nauman Shahzad\" })), document.getElementById('root'));\n\n\n//# sourceURL=webpack:///./app.tsx?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nconst ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\nconst NameComponent_1 = __webpack_require__(/*! ./src/NameComponent */ \"./src/NameComponent.tsx\");\nconst InfoRadioComponent_1 = __webpack_require__(/*! ./src/InfoRadioComponent */ \"./src/InfoRadioComponent.tsx\");\nconst PanelComponent_1 = __webpack_require__(/*! ./src/PanelComponent */ \"./src/PanelComponent.tsx\");\nclass App extends React.Component {\n    constructor(props) {\n        super(props);\n        this.state = { projects: true, name: \"Nauman Shahzad\" };\n        this.showProjects = this.showProjects.bind(this);\n    }\n    showProjects() {\n        const newState = this.state.projects ? false : true;\n        this.setState({ projects: newState });\n    }\n    render() {\n        return React.createElement(\"div\", null,\n            React.createElement(NameComponent_1.default, { name: this.state.name }),\n            React.createElement(InfoRadioComponent_1.default, { showProjects: this.showProjects }),\n            React.createElement(PanelComponent_1.default, { projects: this.state.projects }));\n    }\n}\nReactDOM.render(React.createElement(App, null), document.getElementById('root'));\n\n\n//# sourceURL=webpack:///./app.tsx?");
 
 /***/ }),
 
@@ -350,6 +350,30 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 /***/ }),
 
+/***/ "./src/Constants.tsx":
+/*!***************************!*\
+  !*** ./src/Constants.tsx ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.projects = new Array();\nexports.projects.push({ title: \"Emotrace\", description: \"Collaborated with a group to create a Webapp, that uses facial recognition API to track user’s emotions while watching a video \\\r\nBackend servlet routing and implementing Google Users API; card templates for videos and channels, \\\r\nused Java, Spring MVC, and Thymeleaf \", startDate: \"January 2017\", endDate: \"May 2017\", href: \"http://emotrace-x1.appspot.com\", hrefLabel: \"Emotrace\" });\nexports.projects.push({ title: \"YouTube Web Crawler\", description: \"Multi-threaded web crawler written in Python 3.6.0. Datamine numerous YouTube videos for tags associated with each video; \\\r\ncreated charts with analysis of tag popularity using the Plotly library.\", startDate: \"January 2017\", endDate: \"May 2017\", href: \"https://github.com/nashahzad/YoutubeTagsCrawler\",\n    hrefLabel: \"Github Repo\" });\nexports.experiences = new Array();\nexports.experiences.push({\n    title: \"Full Stack Web Developer\",\n    startDate: \"October 2017\",\n    endDate: \"May 2017, Part Time\",\n    description: \"ASP.NET Stack: C#, JQuery, LINQ, and Web Forms. Implement new features, bug fixes, and updates to legacy code.\",\n    href: null,\n    hrefLabel: null\n});\n\n\n//# sourceURL=webpack:///./src/Constants.tsx?");
+
+/***/ }),
+
+/***/ "./src/InfoRadioComponent.tsx":
+/*!************************************!*\
+  !*** ./src/InfoRadioComponent.tsx ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nlet style = {\n    display: \"inline-block\",\n    verticalAlign: \"middle\"\n};\nclass InfoRadioComponent extends React.Component {\n    constructor(props) {\n        super(props);\n        this.state = { projects: true };\n        this.handleChange = this.handleChange.bind(this);\n    }\n    handleChange(e) {\n        this.props.showProjects();\n        this.setState({ projects: !this.state.projects });\n    }\n    render() {\n        const activeClass = \"btn btn-secondary active\";\n        const notActiveClass = \"btn btn-secondary\";\n        return (React.createElement(\"div\", { style: style, className: \"btn-group btn-group-toggle text-center\", \"data-toggle\": \"buttons\", onChange: this.handleChange },\n            React.createElement(\"label\", { className: this.state.projects ? activeClass : notActiveClass },\n                React.createElement(\"input\", { type: \"radio\", name: \"options\", id: \"option1\", \"data-autocomplete\": \"off\" }),\n                \" Projects\"),\n            React.createElement(\"label\", { className: !this.state.projects ? activeClass : notActiveClass },\n                React.createElement(\"input\", { type: \"radio\", name: \"options\", id: \"option2\", \"data-autocomplete\": \"off\" }),\n                \" Experiences\")));\n    }\n}\nexports.default = InfoRadioComponent;\n\n\n//# sourceURL=webpack:///./src/InfoRadioComponent.tsx?");
+
+/***/ }),
+
 /***/ "./src/NameComponent.tsx":
 /*!*******************************!*\
   !*** ./src/NameComponent.tsx ***!
@@ -358,7 +382,19 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nclass NameComponent extends React.Component {\n    constructor(props) {\n        super(props);\n    }\n    render() {\n        return React.createElement(\"h1\", null,\n            \" \",\n            this.props.name,\n            \" \");\n    }\n}\nexports.default = NameComponent;\n\n\n//# sourceURL=webpack:///./src/NameComponent.tsx?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nlet style = {\n    display: \"block\",\n    marginLeft: \"auto\",\n    marginRight: \"auto\",\n    width: \"50%\"\n};\nclass NameComponent extends React.Component {\n    constructor(props) {\n        super(props);\n    }\n    render() {\n        return (React.createElement(\"h1\", { className: \"jumbotron-heading text-center\", style: style }, this.props.name));\n    }\n}\nexports.default = NameComponent;\n\n\n//# sourceURL=webpack:///./src/NameComponent.tsx?");
+
+/***/ }),
+
+/***/ "./src/PanelComponent.tsx":
+/*!********************************!*\
+  !*** ./src/PanelComponent.tsx ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nconst Constants_1 = __webpack_require__(/*! ./Constants */ \"./src/Constants.tsx\");\nclass PanelComponent extends React.Component {\n    constructor(props) {\n        super(props);\n    }\n    render() {\n        const panelContents = this.props.projects ? Constants_1.projects : Constants_1.experiences;\n        var body = panelContents.map((panelContent, i) => {\n            return (React.createElement(\"div\", { className: \"card\", key: \"card_\" + i },\n                React.createElement(\"div\", { className: \"card-body\" },\n                    React.createElement(\"h4\", { className: \"card-title\" }, panelContent.title),\n                    React.createElement(\"h6\", { className: \"card-subtitle mb-2 text-muted\" },\n                        panelContent.startDate,\n                        \" - \",\n                        panelContent.endDate),\n                    React.createElement(\"p\", { className: \"card-text\" }, panelContent.description),\n                    panelContent.href != null ? React.createElement(\"a\", { href: panelContent.href, className: \"card-link\", target: \"_blank\" }, panelContent.hrefLabel) : '')));\n        });\n        console.log(body);\n        return React.createElement(\"div\", null,\n            \" \",\n            body,\n            \" \");\n    }\n}\nexports.default = PanelComponent;\n\n\n//# sourceURL=webpack:///./src/PanelComponent.tsx?");
 
 /***/ }),
 
