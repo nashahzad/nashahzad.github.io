@@ -11,15 +11,14 @@ class App extends React.Component<{},{projects: boolean, name: string}>{
         this.showProjects = this.showProjects.bind(this);
     }
 
-    showProjects(){
-        const newState = this.state.projects ? false: true;
+    showProjects(show: boolean){
+        const newState = show ? false: true;
         this.setState({projects: newState});
     }
 
     render(){
         return <div>
-        <Name name={this.state.name} />
-        <InfoRadioComponent showProjects={this.showProjects} />
+        <Name name={this.state.name} showProjects={this.showProjects} />
         <PanelComponent projects={this.state.projects}/>
         </div>;
     }

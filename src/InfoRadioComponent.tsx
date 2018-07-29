@@ -2,7 +2,8 @@ import * as React from "react";
 
 let style = {
     display: "inline-block",
-    verticalAlign: "middle"
+    verticalAlign: "middle",
+    marginBottom: 10
 };
 
 export default class InfoRadioComponent extends React.Component<{showProjects: Function},{projects: boolean}> {
@@ -13,21 +14,20 @@ export default class InfoRadioComponent extends React.Component<{showProjects: F
     }
 
     handleChange(e){
-        this.props.showProjects();
-        this.setState({projects: !this.state.projects})
+        const show = e.target.value === "projects" ? false: true;
+        this.props.showProjects(show);
+        this.setState({projects: !show})
     }
 
     render(){
-        const activeClass = "btn btn-secondary active";
-        const notActiveClass = "btn btn-secondary";
+        const activeClass = "btn btn-outline-success";
+        const notActiveClass = "btn btn-sm btn-outline-secondary";
         return (
-            <div style={style} className="btn-group btn-group-toggle text-center" data-toggle="buttons" onChange={this.handleChange}>
-                <label className={this.state.projects ? activeClass: notActiveClass}>
-                    <input type="radio" name="options" id="option1" data-autocomplete="off" /> Projects
-                </label>
-                <label className={!this.state.projects ? activeClass: notActiveClass}>
-                    <input type="radio" name="options" id="option2" data-autocomplete="off" /> Experiences
-                </label>
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div className="navbar-nav">
+                <button value="projects" className={this.state.projects ? activeClass: notActiveClass} type="button" onClick={this.handleChange}>Projects <span className="sr-only">(current)</span></button>
+                <button value="experiences" className={!this.state.projects ? activeClass: notActiveClass} type="button" onClick={this.handleChange}>Experiences</button>
+                </div>
             </div>
         );
     }

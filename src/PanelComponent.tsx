@@ -20,8 +20,6 @@ export default class PanelComponent extends React.Component<{projects: boolean},
             </div>);
         });
 
-        console.log(body);
-
         return <div> {body} </div>;
     }
 }
