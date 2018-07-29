@@ -1,11 +1,5 @@
 import * as React from "react";
 
-let style = {
-    display: "inline-block",
-    verticalAlign: "middle",
-    marginBottom: 10
-};
-
 export default class InfoRadioComponent extends React.Component<{showProjects: Function},{projects: boolean}> {
     constructor(props){
         super(props);
