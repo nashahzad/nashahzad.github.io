@@ -1,13 +1,8 @@
 import * as React from "react";
 import {projects, experiences} from "./Constants";
 
-export default class PanelComponent extends React.Component<{projects: boolean}, {}> {
-    constructor(props){
-        super(props);
-    }
-
-    render(){
-        const panelContents = this.props.projects ? projects: experiences;
+const PanelComponent: React.SFC<{projects: boolean}> = (props) =>{
+    const panelContents = props.projects ? projects: experiences;
         var body = panelContents.map((panelContent, i) => {
             return (
             <div className="card" key={"card_" + i}>
@@ -28,5 +23,6 @@ export default class PanelComponent extends React.Component<{projects: boolean},
         });
 
         return <div> {body} </div>;
-    }
 }
+
+export default PanelComponent;

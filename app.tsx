@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import Name from "./src/NameComponent";
+import NameComponent from "./src/NameComponent";
 import PanelComponent from "./src/PanelComponent";
 
 class App extends React.Component<{},{projects: boolean, name: string}>{
@@ -17,7 +17,7 @@ class App extends React.Component<{},{projects: boolean, name: string}>{
 
     render(){
         return <div>
-        <Name name={this.state.name} showProjects={this.showProjects} />
+        <NameComponent name={this.state.name} showProjects={this.showProjects} />
         <PanelComponent projects={this.state.projects}/>
         </div>;
     }
