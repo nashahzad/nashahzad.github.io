@@ -5,7 +5,9 @@ const PanelComponent: React.SFC<{projects: boolean}> = (props) =>{
     const panelContents = props.projects ? projects: experiences;
         var body = panelContents.map((panelContent, i) => {
             return (
-            <div className="card" key={"card_" + i}>
+            <div className="container">
+            <div className="row">
+            <div className="card card-inverse card-primary" key={"card_" + i}>
                 <div className="card-body">
                     <h4 className="card-title">{panelContent.title}</h4>
                     <h6 className="card-subtitle mb-2 text-muted">{panelContent.startDate} - {panelContent.endDate}</h6>
@@ -19,6 +21,8 @@ const PanelComponent: React.SFC<{projects: boolean}> = (props) =>{
                     </ul>
                     {panelContent.href != null ? <a href={panelContent.href} className="card-link" target="_blank">{panelContent.hrefLabel}</a>: ''}
                 </div>
+            </div>
+            </div>
             </div>);
         });
 

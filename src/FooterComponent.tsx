@@ -2,7 +2,7 @@ import * as React from "react";
 
 const FooterComponent: React.SFC<{}> = (props) => {
     return (
-        <div className="text-center">
+        <div className="container text-center">
                 <a href="https://www.linkedin.com/in/nauman-shahzad-842944a5/" target="_blank">
                 <img className="social-icons" src="https://image.flaticon.com/icons/svg/56/56591.svg" alt="" />
                 </a>
