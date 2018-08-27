@@ -26,3 +26,7 @@ body {
     width: 30px;
     height: 30px;
 }
+
+.navbar-collapse.collapse.in {
+    display: block!important;
+  }
