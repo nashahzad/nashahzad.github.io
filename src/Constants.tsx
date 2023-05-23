@@ -2,6 +2,14 @@ import Panel from "./PanelInterface";
 
 export var projects = new Array<Panel>();
 projects.push({
+    title: "Jira Sprint Analytics",
+    description: "Open source Python 3.7 CLI tool that utilizes Jira’s API for gathering various metrics on specified sprints. \
+    Consolidates the data gathered with pandas dataframes and generates visuals with plotly ",
+    startDate: "July 2021",
+    endDate: "December 2021",
+    href: "https://github.com/nashahzad/jira-sprint-analytics",
+    hrefLabel: "Github Repo"})
+projects.push({
     title: "Emotrace", 
     description: "Collaborated with a group to create a Webapp, that uses facial recognition API to track user’s emotions while watching a video. \
     Backend servlet routing and implementing Google Users API; card templates for videos and channels, \
@@ -20,6 +28,20 @@ projects.push({
 hrefLabel: "Github Repo"});
 
 export var experiences = new Array<Panel>();
+experiences.push({
+    title: "Senior Software Engineer, Harver",
+    startDate: "April 2019",
+    endDate: "Current",
+    description: "Python back end development in django and serverless. " +
+        "Created fully automated CI/CD pipelines for all of our microservices  with GoCD. " +
+        "Designed system integration testing flows to facilitate testing end to end User experience flows. " +
+        "Created technical specs for both internal and external users  with PlantUML and OpenAPI. " +
+        "Reduced incident resolution time by adding New Relic instrumentation and PagerDuty alerting. " +
+        "Architected a fan out message subscription service facilitating client’s ability to self subscribe to messages. " +
+        "Created an open source  CLI tool that utilizes Jira’s API for gathering various metrics on specified sprints.",
+    href: null,
+    hrefLabel: null
+});
 experiences.push({
     title: "Full Stack Web Developer, Eduware Inc.",
     startDate: "October 2017",

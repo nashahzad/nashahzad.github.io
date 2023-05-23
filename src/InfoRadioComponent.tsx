@@ -3,7 +3,7 @@ import * as React from "react";
 export default class InfoRadioComponent extends React.Component<{showProjects: Function},{projects: boolean}> {
     constructor(props){
         super(props);
-        this.state = {projects: true};
+        this.state = {projects: false};
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -19,8 +19,8 @@ export default class InfoRadioComponent extends React.Component<{showProjects: F
         return (
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                    <button value="projects" className={this.state.projects ? activeClass: notActiveClass} type="button" onClick={this.handleChange}>Projects </button>
                     <button value="experiences" className={!this.state.projects ? activeClass: notActiveClass} type="button" onClick={this.handleChange}>Experiences</button>
+                    <button value="projects" className={this.state.projects ? activeClass: notActiveClass} type="button" onClick={this.handleChange}>Projects </button>
                 </div>
             </div>
         );

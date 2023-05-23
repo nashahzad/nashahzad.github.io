@@ -7,7 +7,7 @@ import FooterComponent from "./src/FooterComponent";
 class App extends React.Component<{},{projects: boolean, name: string}>{
     constructor(props){
         super(props);
-        this.state = {projects: true, name: "Nauman Shahzad"};
+        this.state = {projects: false, name: "Nauman Shahzad"};
         this.showProjects = this.showProjects.bind(this);
     }
 
